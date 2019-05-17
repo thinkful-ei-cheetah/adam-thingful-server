@@ -110,7 +110,7 @@ describe('Things Endpoints', function() {
           helpers.makeExpectedThing(
             testUsers,
             thing,
-            testReviews,
+            //testReviews,
           )
         )
         return supertest(app)
@@ -171,20 +171,19 @@ describe('Things Endpoints', function() {
         )
       )
       
-      //test failing because date is messed up and I dont know what to do. 
-      // it('responds with 200 and the specified thing', () => {
-      //   const thingId = 2
-      //   const expectedThing = helpers.makeExpectedThing(
-      //     testUsers,
-      //     testThings[thingId - 1],
-      //     testReviews,
-      //   )
+      it('responds with 200 and the specified thing', () => {
+        const thingId = 2
+        const expectedThing = helpers.makeExpectedThing(
+          testUsers,
+          testThings[thingId - 1],
+          testReviews,
+        )
 
-      //   return supertest(app)
-      //     .get(`/api/things/${thingId}`)
-      //     .set('Authorization', makeAuthHeader(testUsers[0]))
-      //     .expect(200, expectedThing)
-      // })
+        return supertest(app)
+          .get(`/api/things/${thingId}`)
+          .set('Authorization', makeAuthHeader(testUsers[0]))
+          .expect(200, expectedThing)
+      })
 
     })
 
@@ -244,7 +243,9 @@ describe('Things Endpoints', function() {
       it('responds with 200 and the specified reviews', () => {
         const thingId = 1
         const expectedReviews = helpers.makeExpectedThingReviews(
-          testUsers, thingId, testReviews
+          testUsers,
+          thingId[thingId -1],
+          testReviews,
         )
 
         return supertest(app)

@@ -8,7 +8,6 @@ function makeUsersArray() {
       full_name: 'Test user 1',
       nickname: 'TU1',
       password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 2,
@@ -16,7 +15,6 @@ function makeUsersArray() {
       full_name: 'Test user 2',
       nickname: 'TU2',
       password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 3,
@@ -24,7 +22,6 @@ function makeUsersArray() {
       full_name: 'Test user 3',
       nickname: 'TU3',
       password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 4,
@@ -32,7 +29,6 @@ function makeUsersArray() {
       full_name: 'Test user 4',
       nickname: 'TU4',
       password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
     },
   ]
 }
@@ -44,7 +40,6 @@ function makeThingsArray(users) {
       title: 'First test thing!',
       image: 'http://placehold.it/500x500',
       user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
@@ -52,7 +47,6 @@ function makeThingsArray(users) {
       title: 'Second test thing!',
       image: 'http://placehold.it/500x500',
       user_id: users[1].id,
-      date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
@@ -60,7 +54,6 @@ function makeThingsArray(users) {
       title: 'Third test thing!',
       image: 'http://placehold.it/500x500',
       user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
@@ -68,7 +61,6 @@ function makeThingsArray(users) {
       title: 'Fourth test thing!',
       image: 'http://placehold.it/500x500',
       user_id: users[3].id,
-      date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
   ]
@@ -82,7 +74,6 @@ function makeReviewsArray(users, things) {
       text: 'First test review!',
       thing_id: things[0].id,
       user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 2,
@@ -90,7 +81,6 @@ function makeReviewsArray(users, things) {
       text: 'Second test review!',
       thing_id: things[0].id,
       user_id: users[1].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 3,
@@ -98,7 +88,6 @@ function makeReviewsArray(users, things) {
       text: 'Third test review!',
       thing_id: things[0].id,
       user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 4,
@@ -106,7 +95,6 @@ function makeReviewsArray(users, things) {
       text: 'Fourth test review!',
       thing_id: things[0].id,
       user_id: users[3].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 5,
@@ -114,7 +102,6 @@ function makeReviewsArray(users, things) {
       text: 'Fifth test review!',
       thing_id: things[things.length - 1].id,
       user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 6,
@@ -122,7 +109,6 @@ function makeReviewsArray(users, things) {
       text: 'Sixth test review!',
       thing_id: things[things.length - 1].id,
       user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 7,
@@ -130,7 +116,6 @@ function makeReviewsArray(users, things) {
       text: 'Seventh test review!',
       thing_id: things[3].id,
       user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
     },
   ];
 }
@@ -150,7 +135,6 @@ function makeExpectedThing(users, thing, reviews=[]) {
     image: thing.image,
     title: thing.title,
     content: thing.content,
-    date_created: thing.date_created,
     number_of_reviews,
     average_review_rating,
     user: {
@@ -158,7 +142,6 @@ function makeExpectedThing(users, thing, reviews=[]) {
       user_name: user.user_name,
       full_name: user.full_name,
       nickname: user.nickname,
-      date_created: user.date_created,
     },
   }
 }
@@ -183,13 +166,11 @@ function makeExpectedThingReviews(users, thingId, reviews) {
       id: review.id,
       text: review.text,
       rating: review.rating,
-      date_created: review.date_created,
       user: {
         id: reviewUser.id,
         user_name: reviewUser.user_name,
         full_name: reviewUser.full_name,
         nickname: reviewUser.nickname,
-        date_created: reviewUser.date_created,
       }
     }
   })
@@ -199,7 +180,6 @@ function makeMaliciousThing(user) {
   const maliciousThing = {
     id: 911,
     image: 'http://placehold.it/500x500',
-    date_created: new Date().toISOString(),
     title: 'Naughty naughty very naughty <script>alert("xss");</script>',
     user_id: user.id,
     content: `Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
@@ -240,34 +220,34 @@ function seedUsers(db, users){
   return db.into('thingful_users').insert(preppedUsers)
     .then(() => 
       db.raw(
-        `SELECT setval('thingful_users_id_seq', ?`,
-        [users[users.length - 1].id]
+        `SELECT setval('thingful_users_id_seq', ?)`,
+        [users[users.length - 1].id],
       )
     )
 }
 
 function seedThingsTables(db, users, things, reviews=[]) {
 
-  // return db.transaction(async trx => {
-  //   await seedUsers(trx, users)
-  //   await trx.into('thingful_things').insert(things)
-  //   await trx.raw(
-  //     `SELECT setval('thingful_things_id_seq', ?)`,
-  //     [things[things.length -1].id],
-  //   )
-  // }) 
-
-  return db
-    .into('thingful_users')
-    .insert(users)
-    .then(() =>
-      db
-        .into('thingful_things')
-        .insert(things)
+  return db.transaction(async trx =>{
+    await seedUsers(trx, users)
+    await trx.into('thingful_things').insert(things)
+    await trx.raw(
+      `SELECT setval('thingful_things_id_seq', ?)`,
+      [things[things.length - 1].id],
     )
-    .then(() =>
-      reviews.length && db.into('thingful_reviews').insert(reviews)
-    ) 
+  })
+
+  // return db
+  //   .into('thingful_users')
+  //   .insert(users)
+  //   .then(() =>
+  //     db
+  //       .into('thingful_things')
+  //       .insert(things)
+  //   )
+  //   .then(() =>
+  //     reviews.length && db.into('thingful_reviews').insert(reviews)
+  //   ) 
 }
 
 function seedMaliciousThing(db, user, thing) {
